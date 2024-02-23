@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .main {
+      background-color: black;
+      /* 스크롤이 안되게 하고 싶다면 (컨텐츠, 문서의 내용이 윈도우보다 벗어나게 되면 보이지 않도록 함)  */
+      /* overflow: hidden; */
+    }
+
+    .box {
+      width: 250px;
+      height: 250px;
+      margin-bottom: 10px;
+      background-color: antiquewhite;
+    }
+
+    .click-box {
+      width: 250px;
+      height: 250px;
+      margin-bottom: 10px;
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="main">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="click-box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+      const click = document.querySelector('.click-box');
+      document.addEventListener('click', coordinate)
+      function coordinate(e) {
+
+        console.log(click.getBoundingClientRect())
+        console.log(`client: ${e.clientX}, ${e.clientY}`)
+        console.log(`page: ${e.pageX}, ${e.pageY}`)
+      }
+
+    </script>
+  </main>
+</body>
+
+</html>
